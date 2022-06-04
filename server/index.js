@@ -1,6 +1,9 @@
 console.log('el contestador bot se ha inicializado');
 
 var Twit = require('twit');
+
+var replie = [' STFU, LEAVE ME ALONE', ' a como chilla la ardilla', ' aja aja', ' el lunes sin falta carnal', ' tes chingando lol', ' vemos', ' no estoy'];
+
 var T = new Twit({
     consumer_key:         'OWQPvEP5ugxvYNi9ZUYHY8mnl',
     consumer_secret:      'pUWKwGqmBBof8sIQ0zIDWgksA0l5MQYlgBGIcn7RdO52iPWVHo',
@@ -19,7 +22,7 @@ function tweetEvent(eventMsg) {
     var from = eventMsg.user.screen_name;
 
     if(replyto == 'fvckoscqr'){
-        var newTweet = '@' + from + ' STFU, LEAVE ME ALONE';
+        var newTweet = '@' + from + replie[Math.floor(Math.random() * replie.length)];
         tuit(newTweet);
     }
 }
